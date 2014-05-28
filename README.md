@@ -1,0 +1,4 @@
+omphaloskepsis
+==============
+
+Navel Gazing
