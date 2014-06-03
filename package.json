@@ -1,0 +1,52 @@
+{
+    "name": "omphaloskepsis",
+    "description": "Navel gazing with Temboo",
+    "version": "0.0.1",
+    "homepage": "https://github.com/nikmeiser/omphaloskepsis",
+    "keywords": [
+        "temboo",
+        "social",
+        "civic" , 
+        "geocode",
+        "GoodCitizen"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nikmeiser/omphaloskepsis.git"
+    },
+    "bugs": {
+        "url": "https://github.com/nikmeiser/omphaloskepsis/issues"
+    },
+    "author": {
+        "name": "Nikhil Prabhakar",
+        "email": "nikmeiser@yahoo.com",
+        "url": "http://woodlouse.blogspot.com/"
+    },
+    "contributors": [
+        {
+            "name": "Nikhil Prabhakar",
+            "email": "nikmeiser@yahoo.com",
+            "url": "http://woodlouse.blogspot.com/"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://github.com/jeremyosborne/packagejsonexample/blob/master/LICENSE.txt"
+        }
+    ],
+    "devDependencies": {
+        
+    },
+    "engines": {
+        "node": ">= 0.10.x"
+    },
+    "dependencies": {
+        "temboo": "latest",
+        "connect-rest": "0.9.12",
+        "q": "latest",
+        "winston": "latest",
+        "connect": "latest"
+    },
+    "private": true
+}
