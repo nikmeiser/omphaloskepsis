@@ -1,7 +1,7 @@
 omphaloskepsis
 ==============
 
-Example of using [Temboo APIs](https://temboo.com/library/Library/Labs/GoodCitizen/Civic/]) to find your local officials, [Connect](http://www.senchalabs.org/connect/) and [Connect-rest](https://github.com/imrefazekas/connect-rest).
+Example of using [Temboo APIs](https://temboo.com/library/Library/Labs/GoodCitizen/Civic/]) to find your local officials using [Connect](http://www.senchalabs.org/connect/) and [Connect-rest](https://github.com/imrefazekas/connect-rest).
 
 The following URL will get  the geocode for 104 Franklin St., New York NY 10013 (spaces are automaticaly urlencoded by Chrome)
 
