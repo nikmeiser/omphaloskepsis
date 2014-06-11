@@ -25,7 +25,7 @@ Requestor.prototype.getGeocodeByAddress = function (addrString) {
     var deferred = q.defer();
     
     var addr = addrString;
-    if( addrString === "undefined"){
+    if( addrString === "undefined" || typeof addrString === "undefined"){
         addr = defaultAddrString;
     }
     
@@ -61,7 +61,7 @@ Requestor.prototype.getCivicData = function (result) {
 
 
 /**
- * Init
+ * Singleton
  * @type {{getInstance: Function}}
  */
 module.exports = {

@@ -46,7 +46,11 @@
         "connect-rest": "0.9.12",
         "q": "latest",
         "winston": "latest",
-        "connect": "latest"
+        "connect": "latest",
+        "bower": "latest",
+        "yo": "latest",
+        "generator-angular": "latest",
+        "generator-karma": "latest"
     },
     "private": true
 }

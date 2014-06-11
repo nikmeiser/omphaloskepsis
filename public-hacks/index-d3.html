@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+   <HEAD>
+   <script type="text/javascript" src="bower_components/d3/d3.min.js" charset="utf-8"></script>
+   <script type="text/javascript" src="js/omphaloskepsis.js" charset="utf-8"></script>
+      <TITLE>
+         A Small Hello 
+      </TITLE>
+   </HEAD>
+<BODY>
+   <H1>Hi</H1>
+   <div id="datatable"></div>
+   <div id="test"></div>
+   
+   <script>
+  
+  d3.json('https://omphaloskepsis-c9-nikmeiser.c9.io/api/civic/').get(function(err, data) {
+    
+    console.log(data);
+    console.log(data.demographics.Results.medianIncome);
+    
+    var peopleTable = tabulate(data.demographics, ["field", "value"]);
+})
+
+function tabulate(data, columns) {
+    var table = d3.select("#datatable").append("table"),
+        thead = table.append("thead"),
+        tbody = table.append("tbody");
+
+    // append the header row
+    thead.append("tr")
+        .selectAll("th")
+        .data(columns)
+        .enter()
+        .append("th")
+            .text(function(column) { return column; });
+
+    // create a row for each object in the data
+    var rows = tbody.selectAll("tr")
+        .data(data)
+        .enter()
+        .append("tr");
+
+    // create a cell in each row for each column
+    var cells = rows.selectAll("td")
+        .data(function(row) {
+            return columns.map(function(column) {
+                return {column: column, value: row[column]};
+            });
+        })
+        .enter()
+        .append("td")
+            .text(function(d) { return d.value; });
+    
+    return table;
+}
+
+
+</script>
+
+</BODY>
+</HTML>

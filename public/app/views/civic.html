@@ -1,0 +1,74 @@
+
+
+<form ng-submit="getCivicDetails()">
+    <div class="control form-inline">
+        <input type="text" ng-model="model.address" size="50" ">
+        <input type="submit" class="btn btn-primary" value="Submit">
+    </div>
+</form>
+<hr>
+<br>
+
+<P><B>Economic Data</B></P>
+<table class="table table-condensed">
+    <tr>
+        <th>Block FIPS</th>
+        <td>{{data.demographics.Results.blockFips || ''}}</td>
+        <td></td>
+        <th>Median Income</th>
+        <td>{{data.demographics.Results.medianIncome | currency:"$" || ''}}</td>
+    </tr>
+    <tr>
+        <th>High School Graduates (%)</th>
+        <td>{{data.demographics.Results.educationHighSchoolGraduate * 100 | number:0 || ''}}%</td>
+        <td></td>
+        <th>College Graduates (%)</th>
+        <td>{{data.demographics.Results.educationBachelorOrGreater * 100 | number:0 || ''}}%</td>
+    </tr>
+    <tr>
+        <th>Income Below Poverty</th>
+        <td>{{data.demographics.Results.incomeBelowPoverty * 100 | number:0 || ''}}%</td>
+        <td></td>
+        <th>Income Below $25,000</th>
+        <td>{{data.demographics.Results.incomeLessThan25 * 100 | number:0 || ''}}%</td>
+    </tr>
+    <tr>
+        <th>Income $25,000-$50,000</th>
+        <td>{{data.demographics.Results.incomeBetween25to50 * 100 | number:0 || ''}}%</td>
+        <td></td>
+        <th>Income $50,000-$100,000</th>
+        <td>{{data.demographics.Results.incomeBetween50to100 * 100 | number:0 || ''}}%</td>
+    </tr>
+    <tr>
+        <th>Income $100,000-$200,000</th>
+        <td>{{data.demographics.Results.incomeBetween100to200 * 100 | number:0 || ''}}%</td>
+        <td></td>
+        <th>Income Above $200,000</th>
+        <td>{{data.demographics.Results.incomeGreater200 * 100 | number:0 || ''}}%</td>
+    </tr>
+</table>
+
+<HR>
+    
+<P><B>Legislator Data</B></P>
+<table class="table table-striped">
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Birthday</th>
+        <th>Party</th>
+        <th>Title</th>
+        <th>Gender</th>
+        <th>District</th>
+    </tr>
+    <tr ng-repeat="legislator in data.legislators">
+        <td>{{legislator.lastname + ', ' + legislator.firstname}}</td>
+        <td>{{legislator.phone}}</td>
+        <td>{{legislator.birthdate}}</td>
+        <td>{{legislator.party}}</td>
+        <td>{{legislator.title}}</td>
+        <td>{{legislator.gender}}</td>
+        <td>{{legislator.district}}</td>
+    </tr>
+</table>
+ 
