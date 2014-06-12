@@ -17,8 +17,6 @@
       $scope.data = {};
       $scope.mapdata = {};
       $scope.mapdata.address = "104 Franklin St., New York NY 10013";
-      //$scope.mapdata.latitude = 40.71863;
-      //$scope.mapdata.longitude = -74.005584;
       $scope.mapdata.map = {
           center:{
               latitude:  40.71863,
