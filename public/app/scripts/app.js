@@ -12,6 +12,7 @@ var omphaloskepsis = angular
   .module('omphaloskepsis', [
     'ngResource',
     'ngRoute',
+    'google-maps',
     
     'navelControllers',
     'navelServices'
@@ -31,3 +32,28 @@ var omphaloskepsis = angular
         redirectTo: '/'
       });
   });
+  
+  //spinner
+  omphaloskepsis.config(function ($httpProvider) {
+  $httpProvider.responseInterceptors.push('myHttpInterceptor');
+
+  var spinnerFunction = function spinnerFunction(data, headersGetter) {
+    $("#spinner").show();
+    return data;
+  };
+
+  $httpProvider.defaults.transformRequest.push(spinnerFunction);
+});
+
+
+omphaloskepsis.factory('myHttpInterceptor', function ($q, $window) {
+  return function (promise) {
+    return promise.then(function (response) {
+      $("#spinner").hide();
+      return response;
+    }, function (response) {
+      $("#spinner").hide();
+      return $q.reject(response);
+    });
+  };
+});

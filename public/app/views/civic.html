@@ -2,10 +2,12 @@
 
 <form ng-submit="getCivicDetails()">
     <div class="control form-inline">
-        <input type="text" ng-model="model.address" size="50" ">
+        <input type="text" ng-model="mapdata.address" size="50" ">
         <input type="submit" class="btn btn-primary" value="Submit">
+        <img id="spinner" ng-src="/app/images/spinnerLarge.gif" style="display:none;">
     </div>
 </form>
+
 <hr>
 <br>
 
@@ -71,4 +73,12 @@
         <td>{{legislator.district}}</td>
     </tr>
 </table>
+<hr>
+
+<P><B>Map</B></P>
+<google-map center="mapdata.map.center" zoom="mapdata.map.zoom" >
+    <markers>
+     <marker ng-repeat="marker in mapdata.map.markers" coords="marker.coords"></marker>
+    </markers>
+</google-map>
  

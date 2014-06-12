@@ -17,3 +17,11 @@ var navelServices = angular.module('navelServices', ['ngResource']);
       query: {method:'GET', params:{address:'@address'}, isArray:false, cache: true}
     });
   }]);
+  
+  
+    navelServices.factory('svcGeocode', ['$resource',
+  function($resource){
+    return $resource('https://omphaloskepsis-c9-nikmeiser.c9.io/api/geocode/:address', {}, {
+      query: {method:'GET', params:{address:'@address'}, isArray:false, cache: true}
+    });
+  }]);
