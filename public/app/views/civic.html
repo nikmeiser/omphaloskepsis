@@ -18,7 +18,9 @@
         <td>{{data.demographics.Results.blockFips || ''}}</td>
         <td></td>
         <th>Median Income</th>
-        <td>{{data.demographics.Results.medianIncome | currency:"$" || ''}}</td>
+        <td>{{data.demographics.Results.medianIncome | currency:"$" || ''}}
+            <img id="spinner2" ng-src="/app/images/spinnerSmall.gif" style="display:none;">
+        </td>
     </tr>
     <tr>
         <th>High School Graduates (%)</th>
@@ -76,9 +78,10 @@
 <hr>
 
 <P><B>Map</B></P>
-<google-map center="mapdata.map.center" zoom="mapdata.map.zoom" >
+<google-map center="mapdata.map.center" zoom="mapdata.map.zoom">
+    <polygon path="mapdata.map.polygon"></polygon>
     <markers>
-     <marker ng-repeat="marker in mapdata.map.markers" coords="marker.coords"></marker>
+     <marker ng-repeat="marker in mapdata.map.markers" coords="marker.coords" icon="marker.icon"></marker>
     </markers>
 </google-map>
  
